@@ -12,7 +12,7 @@ Design and develop a fully responsive e-commerce website with product listings, 
 
 ## Project Structure
 ```
-/ecommerce-project/
+/ecommerce-website/
 │
 ├── /src/
 │   ├── /app/
