@@ -117,7 +117,3 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 
 ## License
 This project is licensed under the MIT License.
-
----
-
-This README structure provides a clear and organized view of the project goals, technologies, and steps to set up and deploy the project. You can modify it further depending on the project's specific details.
