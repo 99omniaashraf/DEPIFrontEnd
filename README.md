@@ -12,7 +12,7 @@ Design and develop a fully responsive e-commerce website with product listings, 
 
 ## Project Structure
 ```
-/ecommerce-website/
+/ecommerce-project/
 │
 ├── /src/
 │   ├── /app/
@@ -117,3 +117,4 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 
 ## License
 This project is licensed under the MIT License.
+
