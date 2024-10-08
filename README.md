@@ -18,19 +18,49 @@ Design and develop a fully responsive e-commerce website with product listings, 
 │   ├── /app/
 │   │   ├── /components/
 │   │   │   ├── home/
+│   │   │   │   ├── home.component.ts
+│   │   │   │   ├── home.component.html
+│   │   │   │   ├── home.component.css
 │   │   │   ├── product-listing/
+│   │   │   │   ├── product-listing.component.ts
+│   │   │   │   ├── product-listing.component.html
+│   │   │   │   ├── product-listing.component.css
 │   │   │   ├── shopping-cart/
+│   │   │   │   ├── shopping-cart.component.ts
+│   │   │   │   ├── shopping-cart.component.html
+│   │   │   │   ├── shopping-cart.component.css
 │   │   │   ├── checkout/
-│   │   └── app.module.ts
+│   │   │   │   ├── checkout.component.ts
+│   │   │   │   ├── checkout.component.html
+│   │   │   │   ├── checkout.component.css
+│   │   │   ├── about-us/                    
+│   │   │   │   ├── about-us.component.ts
+│   │   │   │   ├── about-us.component.html
+│   │   │   │   ├── about-us.component.css
+│   │   │   ├── header/                          
+│   │   │   │   ├── header.component.ts
+│   │   │   │   ├── header.component.html
+│   │   │   │   ├── header.component.css
+│   │   │   ├── footer/                          
+│   │   │   │   ├── footer.component.ts
+│   │   │   │   ├── footer.component.html
+│   │   │   │   ├── footer.component.css
+│   │   ├── app.component.ts
+│   │   ├── app.component.html
+│   │   ├── app.component.css
+│   │   ├── app.module.ts
 │   └── index.html
 │
 ├── /assets/
 │   └── /images/
+│       ├── product1.jpg
+│       ├── product2.jpg
 │
 ├── /styles/
 │   └── styles.css
 │
 └── README.md
+
 ```
 
 ## Features
@@ -89,31 +119,32 @@ To run this project locally, follow these steps:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/99omniaashraf/DEPIFrontEnd.git
-   ```
-   
-2. **Navigate into the project directory**:
-   ```bash
-   cd ecommerce-project
-   ```
-   
-3. **Install dependencies**:
-   ```bash
-   npm install
-   ```
-   
-4. **Run the project**:
-   ```bash
-   ng serve
-   ```
-   The project will be accessible on `http://localhost:4200`.
+      git clone https://github.com/99omniaashraf/DEPIFrontEnd.git
+         ```
+            
+            2. **Navigate into the project directory**:
+               ```bash
+                  cd ecommerce-project
+                     ```
+                        
+                        3. **Install dependencies**:
+                           ```bash
+                              npm install
+                                 ```
+                                    
+                                    4. **Run the project**:
+                                       ```bash
+                                          ng serve
+                                             ```
+                                                The project will be accessible on `http://localhost:4200`.
 
-## Deployment
-The website has been deployed using [Netlify/AWS] and can be accessed through the following URL:
-[Live Website](http://example-ecommerce-site.com)
+                                                ## Deployment
+                                                The website has been deployed using [Netlify/AWS] and can be accessed through the following URL:
+                                                [Live Website](http://example-ecommerce-site.com)
 
-## Contributing
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/username/ecommerce-project/issues).
+                                                ## Contributing
+                                                Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/username/ecommerce-project/issues).
 
-## License
-This project is licensed under the MIT License.
+                                                ## License
+                                                This project is licensed under the MIT License.
+                                                
