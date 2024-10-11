@@ -2,33 +2,49 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link href="/favicon.ico" type="image/x-icon" rel="icon" />
-    <link rel="stylesheet" href="./css/master.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Claynova - Pottery Products</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="/DEPIFrontEnd/master.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!--<script src="/DEPIFrontEnd/script.js"></script>-->
   </head>
   <body>
     <header>
-      <p class="title">Claynova</p>
-      <nav>
-        <a href="#">Products</a>
-        <a href="#">Cart</a>
-        <a href="#">Contact Us</a>
-        <a href="#">About Us</a>
-        <a href="#">More</a>
+      <div class="logo">
+        <p class="title">Claynova</p>
+      </div>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Cart</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">More</a></li>
+        </ul>
       </nav>
     </header>
+
     <main>
-      <section>
+      <section class="hero">
         <div class="product-description">
           <img
-            src="./sample-2.jpg"
-            alt="Beautiful pottery"
+            src="/DEPIFrontEnd/img/sample-2.jpg"
+            alt="Beautiful handcrafted pottery"
             class="product-image"
+            loading="lazy"
           />
           <div class="text-overlay">
-            <p>100% Original Products</p>
-            <p>
+            <p class="highlight">100% Original Products</p>
+            <p class="product-info">
               Discover our exquisite collection of authentic pottery.<br />
               Each piece is handcrafted with care.
             </p>
@@ -36,29 +52,77 @@
         </div>
       </section>
 
-      <section class="general-product">
-        <h2>Featured Products</h2>
-        <div class="product">
+      <section class="features">
+        <div class="feature">
           <img
-            src="path/to/your/image1.jpg"
-            alt="Product 1"
-            class="product-image"
+            src="/DEPIFrontEnd/img/free-shipping-icon.png"
+            alt="Free Shipping Icon"
           />
-          <h3>Product 1</h3>
-          <p>Product 1 description.</p>
+          <h3>Free Shipping</h3>
+          <p>On all orders.</p>
         </div>
-        <div class="product">
+        <div class="feature">
           <img
-            src="path/to/your/image2.jpg"
-            alt="Product 2"
-            class="product-image"
+            src="/DEPIFrontEnd/img/flexible-payment-icon.png"
+            alt="Flexible Payment Icon"
           />
-          <h3>Product 2</h3>
-          <p>Product 2 description.</p>
+          <h3>Flexible Payment</h3>
+          <p>Pay with multiple cards.</p>
+        </div>
+        <div class="feature">
+          <img
+            src="/DEPIFrontEnd/img/easy-return-icon.png"
+            alt="Easy Return Policy Icon"
+          />
+          <h3>Easy Return Policy</h3>
+          <p>If goods have problems.</p>
+        </div>
+        <div class="feature">
+          <img
+            src="/DEPIFrontEnd/img/customer-service-icon.png"
+            alt="Customer Service Icon"
+          />
+          <h3>Customer Service</h3>
+          <p>Available online every day.</p>
+        </div>
+        <div class="feature">
+          <img
+            src="/DEPIFrontEnd/img/member-discount-icon.png"
+            alt="Member Discount Icon"
+          />
+          <h3>Member Discount</h3>
+          <p>On orders over $120.</p>
+        </div>
+      </section>
+
+      <section class="featured-products">
+        <h2>Featured Products</h2>
+        <div class="product-grid">
+          <div class="product">
+            <img
+              src="path/to/your/image1.jpg"
+              alt="Product 1: Handcrafted pottery vase"
+              class="product-image"
+              loading="lazy"
+            />
+            <h3>Product 1</h3>
+            <p>Product 1 description.</p>
+          </div>
+          <div class="product">
+            <img
+              src="path/to/your/image2.jpg"
+              alt="Product 2: Unique ceramic bowl"
+              class="product-image"
+              loading="lazy"
+            />
+            <h3>Product 2</h3>
+            <p>Product 2 description.</p>
+          </div>
         </div>
         <!-- Add more product sections as needed -->
       </section>
     </main>
+
     <footer>
       <div class="footer-container">
         <div class="footer-left">
@@ -79,4 +143,60 @@
       </div>
     </footer>
   </body>
+  <script>
+    const nav = document.querySelector("nav");
+    const navLinks = document.querySelectorAll("nav a");
+    const burger = document.createElement("div");
+
+    burger.classList.add("burger");
+    burger.innerHTML = "<div></div><div></div><div></div>";
+    document.querySelector("header").appendChild(burger);
+
+    burger.addEventListener("click", () => {
+      nav.classList.toggle("nav-active");
+      burger.classList.toggle("toggle");
+    });
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        nav.classList.remove("nav-active");
+        burger.classList.remove("toggle");
+      });
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+          behavior: "smooth",
+        });
+      });
+    });
+
+    const productImages = document.querySelectorAll(".product-image");
+    productImages.forEach((img) => {
+      img.addEventListener("click", () => {
+        const popup = document.createElement("div");
+        popup.classList.add("product-popup");
+        popup.innerHTML = `
+        <div class="popup-content">
+          <img src="${img.src}" alt="${img.alt}" />
+          <button class="close-popup">Close</button>
+        </div>
+      `;
+        document.body.appendChild(popup);
+
+        document.querySelector(".close-popup").addEventListener("click", () => {
+          popup.remove();
+        });
+      });
+    });
+    document.body.addEventListener("click", (e) => {
+      const popup = document.querySelector(".product-popup");
+      if (popup && !popup.querySelector(".popup-content").contains(e.target)) {
+        popup.remove();
+      }
+    });
+  </script>
 </html>

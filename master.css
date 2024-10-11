@@ -1,6 +1,7 @@
+/* Global Styles */
 body {
   background-color: #f4eaea;
-  font-family: Arial, sans-serif;
+  font-family: "Poppins", Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -9,55 +10,71 @@ header {
   background-color: white;
   padding: 20px;
   text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .title {
-  font-size: 24px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 28px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
   color: #333;
 }
 
+/* Navigation Styles */
 nav {
-  border: 1px solid #ddd;
+  border: none;
   padding: 10px;
   text-align: center;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: larger;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
   background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 20px;
 }
 
 nav a {
-  color: #3498db;
+  color: #ff6f61;
   text-decoration: none;
   font-weight: bold;
-  padding: 0 30px;
+  padding: 10px 20px;
+  border-radius: 20px;
 }
 
 nav a:hover {
-  color: #2980b9;
-  text-decoration: underline;
-  transition: color 0.3s ease;
+  color: #fff;
+  background-color: #ff6f61;
+  transition: all 0.3s ease;
 }
 
+/* Product Description */
 .product-description {
   position: relative;
-  margin: 20px;
+  margin: 10px auto;
   overflow: hidden;
-  font-family: Arial, sans-serif;
-  background-color: rgba(255, 255, 255, 0.8);
+  max-width: 1000px;
+  max-height: 500px;
+  background-color: rgba(255, 255, 255, 0.9);
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .product-description img {
   max-width: 100%;
   height: auto;
   display: block;
-  border: none;
-  border-radius: 10px;
+  border-radius: 12px;
 }
 
 .text-overlay {
@@ -66,28 +83,57 @@ nav a:hover {
   left: 20px;
   transform: translateY(-50%);
   color: white;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.3);
   padding: 20px;
-  border-radius: 5px;
-  font-size: 1.5em;
-  text-align: left;
+  border-radius: 10px;
+  font-size: 1.4em;
+  font-family: "Poppins", sans-serif;
 }
 
 .product-description p {
   margin: 5px 0;
   line-height: 1.6;
+  color: #fff6f6;
 }
 
-.product-description .price {
-  color: red;
-  font-weight: bold;
-  font-size: 1.4em;
+/* Features Section */
+.features {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  padding: 40px;
+  background-color: #fff8f8;
 }
 
+.feature {
+  flex: 1;
+  padding: 10px;
+  margin: 10px;
+  max-width: 180px;
+}
+
+.feature img {
+  width: 50px;
+  height: 50px;
+}
+
+.feature h3 {
+  font-size: 20px;
+  margin: 10px 0 5px;
+  color: #333;
+  font-family: "Poppins", sans-serif;
+}
+
+.feature p {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Footer Styles */
 footer {
   background-color: #333;
   color: white;
-  padding: 20px;
+  padding: 30px;
   text-align: center;
   margin-top: 30px;
 }
@@ -95,19 +141,23 @@ footer {
 .footer-container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   max-width: 1000px;
   margin: auto;
+  flex-wrap: wrap;
 }
 
 .footer-left,
 .footer-right {
   flex: 1;
+  padding: 10px;
 }
 
 .footer-left h4,
 .footer-right h4 {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
 }
 
 .footer-right ul {
@@ -120,7 +170,7 @@ footer {
 }
 
 .footer-right ul li a {
-  color: #4caf50;
+  color: #ff6f61;
   text-decoration: none;
 }
 
@@ -128,26 +178,46 @@ footer {
   text-decoration: underline;
 }
 
+/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
-  .title {
-    font-size: 22px;
+  nav ul {
+    flex-direction: column;
   }
 
-  nav {
-    font-size: medium;
+  .features {
+    flex-direction: column;
   }
 
   .footer-container {
     flex-direction: column;
   }
+
+  .product-description {
+    max-width: 90%; 
+    max-height: auto;
+    padding: 15px;
+  }
+
+  .text-overlay {
+    position: static;
+    transform: none;
+    background-color: rgba(0, 0, 0, 0.1); /* Keep some background for readability */
+    color: white;
+  }
 }
 
 @media (max-width: 480px) {
-  .title {
-    font-size: 20px;
+  .product-description {
+    max-width: 100%;
+    max-height: auto;
+    padding: 10px;
+    border-radius: 8px;
   }
 
-  .product-description {
-    padding: 15px;
+  .text-overlay {
+    position: static;
+    transform: none;
+    background-color: rgba(0, 0, 0, 0.2); /* Darker for mobile readability */
+    color: white;
   }
 }
