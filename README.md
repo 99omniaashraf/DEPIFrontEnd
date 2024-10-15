@@ -14,56 +14,88 @@ Design and develop a fully responsive e-commerce website with product listings, 
 ## Project Structure
 
 ```
-/ecommerce-project/
+ecommerce-project/
 │
-├── /src/
-│   ├── /app/
-│   │   ├── /components/
-│   │   │   ├── home/
-│   │   │   │   ├── home.component.ts
-│   │   │   │   ├── home.component.html
-│   │   │   │   ├── home.component.css
+├── src/
+│   ├── app/
+│   │   ├── components/
+│   │   │   ├── navbar/
+│   │   │   │   ├── navbar.component.ts
+│   │   │   │   ├── navbar.component.html
+│   │   │   │   ├── navbar.component.css
+│   │   │   │
 │   │   │   ├── product-listing/
 │   │   │   │   ├── product-listing.component.ts
 │   │   │   │   ├── product-listing.component.html
 │   │   │   │   ├── product-listing.component.css
-│   │   │   ├── shopping-cart/
-│   │   │   │   ├── shopping-cart.component.ts
-│   │   │   │   ├── shopping-cart.component.html
-│   │   │   │   ├── shopping-cart.component.css
+│   │   │   │
+│   │   │   ├── product-detail/
+│   │   │   │   ├── product-detail.component.ts
+│   │   │   │   ├── product-detail.component.html
+│   │   │   │   ├── product-detail.component.css
+│   │   │   │
+│   │   │   ├── cart/
+│   │   │   │   ├── cart.component.ts
+│   │   │   │   ├── cart.component.html
+│   │   │   │   ├── cart.component.css
+│   │   │   │
 │   │   │   ├── checkout/
 │   │   │   │   ├── checkout.component.ts
 │   │   │   │   ├── checkout.component.html
 │   │   │   │   ├── checkout.component.css
-│   │   │   ├── about-us/
-│   │   │   │   ├── about-us.component.ts
-│   │   │   │   ├── about-us.component.html
-│   │   │   │   ├── about-us.component.css
-│   │   │   ├── header/
-│   │   │   │   ├── header.component.ts
-│   │   │   │   ├── header.component.html
-│   │   │   │   ├── header.component.css
-│   │   │   ├── footer/
-│   │   │   │   ├── footer.component.ts
-│   │   │   │   ├── footer.component.html
-│   │   │   │   ├── footer.component.css
-│   │   ├── app.component.ts
-│   │   ├── app.component.html
-│   │   ├── app.component.css
-│   │   ├── app.module.ts
-│   └── index.html
+│   │   │   │
+│   │   ├── services/
+│   │   │   ├── product.service.ts
+│   │   │   ├── cart.service.ts
+│   │   │
+│   │   ├── models/
+│   │   │   ├── product.model.ts
+│   │   │   ├── cart.model.ts
+│   │   │
+│   │   ├── pages/
+│   │   │   ├── home/
+│   │   │   │   ├── home.component.ts
+│   │   │   │   ├── home.component.html
+│   │   │   │   ├── home.component.css
+│   │   │   │
+│   │   │   ├── product-listing/
+│   │   │   │   ├── product-listing.page.ts
+│   │   │   │   ├── product-listing.page.html
+│   │   │   │   ├── product-listing.page.css
+│   │   │   │
+│   │   │   ├── cart/
+│   │   │   │   ├── cart.page.ts
+│   │   │   │   ├── cart.page.html
+│   │   │   │   ├── cart.page.css
+│   │   │   │
+│   │   │   ├── checkout/
+│   │   │   │   ├── checkout.page.ts
+│   │   │   │   ├── checkout.page.html
+│   │   │   │   ├── checkout.page.css
+│   │   │
+│   ├── assets/
+│   │   ├── images/       
+│   │   ├── styles/       
+│   │   │   ├── app.css
+│   │   │   ├── bootstrap.css
+│   │   └── js/           
+│   │
+│   ├── environments/     
+│   │   ├── environment.ts
+│   │   ├── environment.prod.ts
+│   │
+│   ├── index.html        
+│   ├── main.ts           
+│   ├── styles.css        
+│   ├── polyfills.ts      
 │
-├── /assets/
-│   └── /images/
-│       ├── product1.jpg
-│       ├── product2.jpg
-│
-├── /styles/
-│   └── styles.css
-│
-└── README.md
+├── angular.json          
+├── package.json          
+└── README.md             
+
 
 ```
+
 
 ## Features
 
