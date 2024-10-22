@@ -1,0 +1,107 @@
+<header>
+  <nav
+    class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top"
+  >
+    <div class="container">
+      <a class="navbar-brand fw-bold" routerLink="/" title="Home"> CLaynova </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link px-3" routerLink="/" routerLinkActive="active"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link px-3"
+              routerLink="/products"
+              routerLinkActive="active"
+              >Products</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link px-3"
+              routerLink="/cart"
+              routerLinkActive="active"
+              >Cart</a
+            >
+          </li>
+        </ul>
+        <a class="btn btn-outline-primary" routerLink="/login">
+          <i class="bi bi-person me-2"></i>Login
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+<main>
+  <!-- Hero Section -->
+  <section class="hero-section d-flex align-items-center text-white">
+    <div class="container text-center">
+      <h1 class="display-4 fw-bold mb-4">Welcome to Our Store</h1>
+      <p class="lead mb-4">Find the best products here!</p>
+      <div class="buttons">
+        <a routerLink="/products" class="btn btn-primary btn-lg me-3"
+          >Shop Now</a
+        >
+        <a routerLink="/about" class="btn btn-outline-light btn-lg"
+          >Learn More</a
+        >
+      </div>
+    </div>
+  </section>
+  <!-- About Section -->
+  <section id="about-us" class="about-section py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- Text Content -->
+        <div class="col-lg-6 about-content pe-lg-5">
+          <h2 class="fw-bold mb-4">About Us</h2>
+          <p class="lead mb-4">
+            Welcome to our store where you will find a variety of exquisite
+            pottery tools.
+          </p>
+          <p class="mb-4">
+            Our mission is to provide beautiful and functional pottery items
+            that inspire creativity and add elegance to your daily life. From
+            vases to plates, each piece is crafted with utmost care and
+            attention to detail.
+          </p>
+          <div class="about-features">
+            <div class="feature-item">
+              <i class="fas fa-hand-holding-heart"></i>
+              <span>Handcrafted with Love</span>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-award"></i>
+              <span>Premium Quality</span>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-shipping-fast"></i>
+              <span>Fast Delivery</span>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Images -->
+        <div class="col-lg-6">
+          <div class="about-images">
+            <div class="image-container">
+              <img src="ecommerce-project\src\assets\images\picture9.jpg" alt="Pottery craft" class="img-1">
+              <img src="ecommerce-project\src\assets\images\picture8.jpg" alt="Pottery tools" class="img-2">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
