@@ -17,10 +17,10 @@
   color: #0d6efd;
 }
 
-hero-section {
+.hero-section {
   position: relative;
   min-height: 100vh;
-  background-image: url('/ecommerce-project/src/assets/picture3.jpg'); /* تأكد من وضع الصورة في مجلد assets */
+  background-image: url('/assets/images/picture3.jpg'); /* تأكد من وضع الصورة في مجلد assets */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
