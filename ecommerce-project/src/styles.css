@@ -1,3 +1,4 @@
+
 /* You can add global styles to this file, and also import other style files */
 button {
   transition: background-color 0.3s ease, transform 0.2s ease;
@@ -68,17 +69,17 @@ input.ng-invalid.ng-touched {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 500;
-    
+
     &.btn-primary {
       background-color: #007bff;
       border-color: #007bff;
-      
+
       &:hover {
         background-color: #0056b3;
         border-color: #0056b3;
       }
     }
-    
+
     &.btn-outline-light {
       &:hover {
         background-color: white;

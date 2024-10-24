@@ -34,6 +34,15 @@ export class ProductListingComponent implements OnInit {
     }
   ];
 
+  socialLinks = [  // إضافة خاصية socialLinks
+    { href: 'https://www.facebook.com', label: 'Facebook', icon: 'fab fa-facebook', title: 'Facebook' },
+    { href: 'https://www.twitter.com', label: 'Twitter', icon: 'fab fa-twitter', title: 'Twitter' },
+    { href: 'https://www.instagram.com', label: 'Instagram', icon: 'fab fa-instagram', title: 'Instagram' },
+    // أضف المزيد من الروابط حسب الحاجة
+  ];
+
+  currentYear: number = new Date().getFullYear();  // لعرض السنة الحالية في الـ footer
+
   constructor() { }
 
   ngOnInit(): void {

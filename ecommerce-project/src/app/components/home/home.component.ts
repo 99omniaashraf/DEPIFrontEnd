@@ -38,6 +38,13 @@ export class HomeComponent {
     }
   ];
 
+  potteryTools = [
+    { url: '/assets/images/picture4.jpg', alt: 'Pottery Wheel' },
+    { url: '/assets/images/picture14.jpg', alt: 'Clay Tools Set' },
+    { url: '/assets/images/picture20.jpg', alt: 'Glazing Kit' },
+    { url: '/assets/images/picture16.jpg', alt: 'Kiln' }
+  ];
+
   addToCart(product: Product): void {
     console.log(`Adding ${product.name} to cart`);
     // Implement cart functionality here
