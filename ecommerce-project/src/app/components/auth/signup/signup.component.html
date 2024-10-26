@@ -1,0 +1,80 @@
+<div class="container-fluid min-vh-100">
+  <div class="row justify-content-center align-items-center min-vh-100">
+    <!-- Signup Form Column -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card shadow">
+        <div class="card-header text-center bg-white">
+          <h3 class="mb-0">Create a new account</h3>
+        </div>
+        <div class="card-body">
+          <form (ngSubmit)="onSignup()">
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                [(ngModel)]="signupForm.name"
+                name="name"
+                required
+                dir="rtl"
+              >
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email address</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                [(ngModel)]="signupForm.email"
+                name="email"
+                required
+                dir="rtl"
+              >
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                [(ngModel)]="signupForm.password"
+                name="password"
+                required
+                dir="rtl"
+              >
+            </div>
+            <div class="mb-3">
+              <label for="confirmPassword" class="form-label">Confirm Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="confirmPassword"
+                [(ngModel)]="signupForm.confirmPassword"
+                name="confirmPassword"
+                required
+                dir="rtl"
+              >
+            </div>
+            <button type="submit" class="btn btn-primary w-100">SignUp</button>
+          </form>
+          <div class="text-center mt-3">
+            <a routerLink="/login">Already have an account? Log in</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Image Column -->
+    <div class="col-md-6 col-lg-6 d-none d-md-block">
+      <div class="text-center">
+        <img
+          src="assets/images/picture22.jpeg"
+          alt="Signup"
+          class="img-fluid rounded shadow-lg"
+          style="max-height: 600px; object-fit: cover;"
+        >
+      </div>
+    </div>
+  </div>
+</div>

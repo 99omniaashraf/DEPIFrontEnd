@@ -1,0 +1,39 @@
+.navbar {
+  transition: background-color 0.3s ease;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.nav-link {
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #0d6efd;
+}
+
+.navbar {
+  background-color: #e7c07d !important;
+}
+
+
+.btn-custom-login {
+  color: #000; 
+  background-color: #e7c07d; 
+  border-color: #e7c07d; 
+}
+
+.btn-custom-login:hover {
+  color: #ffff; 
+  background-color: #000; 
+  border-color: #e7c07d; 
+}
+
+/* في navbar.component.css أو styles.css */
+body {
+  padding-top: 60px; /* تأكد من أن القيمة تتناسب مع ارتفاع شريط التنقل */
+}

@@ -1,0 +1,30 @@
+:host {
+  display: block;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+.card {
+  border: none;
+  border-radius: 15px;
+}
+.btn-primary {
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #e7c07d; /* اللون الأساسي */
+  border-color: #e7c07d;
+}
+.btn-primary:hover {
+  background-color: #e7c07d; /* لون الهوفر */
+  border-color: #e7c07d;
+}
+.btn-primary:active {
+  background-color: #e7c07d !important; /* لون الضغط */
+  border-color: #e7c07d !important;
+}
+img {
+  border-radius: 15px;
+}
+
+.text-center a {
+  color: #000;
+}

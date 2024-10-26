@@ -22,4 +22,10 @@ export class CartService {
   getCartTotal(): number {
     return this.cart.reduce((total, item) => total + item.price, 0);
   }
+
+  clearCart(): void {
+    // Add this method if it doesn't exist
+    localStorage.removeItem('cart');
+    // If you're using a different storage method, adjust accordingly
+  }
 }

@@ -1,46 +1,66 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { CartService } from '../../services/cart.service';
+import { Product } from '../../models/product.model';
 
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',
-  styleUrls: ['./checkout.component.scss']
+  styleUrls: ['./checkout.component.scss'],
+  standalone: true,
+  imports: [
+    CommonModule,
+    ReactiveFormsModule
+  ]
 })
 export class CheckoutComponent implements OnInit {
-  checkoutForm!: FormGroup; // استخدام علامة التعجب
-  submitted = false;
+  cartItems: Product[] = [];
+  cartTotal: number = 0;
+  checkoutForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {}
-
-  ngOnInit(): void {
-    this.checkoutForm = this.formBuilder.group({
-      name: ['', [Validators.required, Validators.minLength(2)]],
+  constructor(
+    private cartService: CartService,
+    private fb: FormBuilder
+  ) {
+    this.checkoutForm = this.fb.group({
+      fullName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      address: ['', [Validators.required]],
-      city: ['', [Validators.required]],
-      zip: ['', [Validators.required, Validators.pattern('^[0-9]{5}$')]],
-      cardNumber: ['', [Validators.required, Validators.pattern('^[0-9]{16}$')]],
-      expirationDate: ['', [Validators.required, Validators.pattern('^(0[1-9]|1[0-2])/[0-9]{2}$')]],
-      cvv: ['', [Validators.required, Validators.pattern('^[0-9]{3}$')]]
+      phone: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
+      address: ['', Validators.required],
+      city: ['', Validators.required],
+      paymentMethod: ['', Validators.required]
     });
   }
 
-  get f() {
-    return this.checkoutForm.controls;
+  ngOnInit(): void {
+    this.cartItems = this.cartService.getCartItems();
+    this.cartTotal = this.cartService.getCartTotal();
+  }
+
+  removeFromCart(productId: number): void {
+    this.cartService.removeFromCart(productId);
+    this.cartItems = this.cartService.getCartItems();
+    this.cartTotal = this.cartService.getCartTotal();
   }
 
   onSubmit(): void {
-    this.submitted = true;
+    if (this.checkoutForm.valid && this.cartItems.length > 0) {
+      const orderData = {
+        items: this.cartItems,
+        total: this.cartTotal,
+        shippingInfo: this.checkoutForm.value
+      };
 
-    if (this.checkoutForm.invalid) {
-      return;
+      console.log('Order placed:', orderData);
+      
+      // Clear cart and reset form after successful order
+      this.cartService.clearCart();
+      this.checkoutForm.reset();
+      this.cartItems = [];
+      this.cartTotal = 0;
+
+      alert('Order placed successfully!');
     }
-
-    // Simulate payment processing or proceed with actual payment integration
-    alert('Checkout successful! Payment is being processed.');
-
-    // Reset the form after successful submission
-    this.checkoutForm.reset();
-    this.submitted = false;
   }
 }

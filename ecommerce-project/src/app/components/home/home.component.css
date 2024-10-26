@@ -47,7 +47,7 @@
 
 /* تنسيق الناڤبار */
 .navbar {
-  background-color: rgba(255, 255, 255, 0.95) !important;
+  background-color: #e7c07d !important;
 }
 
 /* تنسيق الأزرار */
@@ -60,12 +60,12 @@
     font-weight: 500;
 
     &.btn-primary {
-      background-color: #007bff;
-      border-color: #007bff;
+      background-color: #e7c07d;
+      border-color: #e7c07d;
 
       &:hover {
-        background-color: #0056b3;
-        border-color: #0056b3;
+        background-color: #000;
+        border-color: #000;
       }
     }
 
@@ -76,6 +76,18 @@
       }
     }
   }
+}
+
+.btn-custom-login {
+  color: #000; 
+  background-color: #e7c07d; 
+  border-color: #e7c07d; 
+}
+
+.btn-custom-login:hover {
+  color: #ffff; 
+  background-color: #000; 
+  border-color: #e7c07d; 
 }
 
 /* Enhanced About Section Styles */

@@ -1,76 +1,136 @@
-<div class="container">
-  <h3>Checkout</h3>
-  <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label for="name">Full Name</label>
-      <input type="text" id="name" class="form-control" formControlName="name" [ngClass]="{'is-invalid': submitted && f.name.errors}" />
-      <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
-        <div *ngIf="f.name.errors.required">Name is required</div>
-        <div *ngIf="f.name.errors.minlength">Name must be at least 2 characters long</div>
+<div class="container mt-4">
+  <div class="row">
+    <!-- Cart Summary Section -->
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h4 class="mb-0">Order Summary</h4>
+        </div>
+        <div class="card-body">
+          <div *ngFor="let item of cartItems" class="d-flex justify-content-between align-items-center mb-3">
+            <div>
+              <h6 class="mb-0">{{item.name}}</h6>
+              <small class="text-muted">Price: ${{item.price}}</small>
+            </div>
+            <button class="btn btn-sm btn-danger" (click)="removeFromCart(item.id)">
+              <i class="fas fa-trash"></i>
+            </button>
+          </div>
+          <hr>
+          <div class="d-flex justify-content-between align-items-center">
+            <h5 class="mb-0">Total</h5>
+            <h5 class="mb-0">${{cartTotal}}</h5>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input type="email" id="email" class="form-control" formControlName="email" [ngClass]="{'is-invalid': submitted && f.email.errors}" />
-      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-        <div *ngIf="f.email.errors.required">Email is required</div>
-        <div *ngIf="f.email.errors.email">Enter a valid email</div>
+    <!-- Checkout Form Section -->
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h4 class="mb-0">Shipping Information</h4>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+              <label for="fullName" class="form-label">Full Name</label>
+              <input 
+                type="text" 
+                class="form-control" 
+                id="fullName" 
+                formControlName="fullName"
+                [class.is-invalid]="checkoutForm.get('fullName')?.invalid && checkoutForm.get('fullName')?.touched"
+              >
+              <div class="invalid-feedback">
+                Full name is required
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input 
+                type="email" 
+                class="form-control" 
+                id="email" 
+                formControlName="email"
+                [class.is-invalid]="checkoutForm.get('email')?.invalid && checkoutForm.get('email')?.touched"
+              >
+              <div class="invalid-feedback">
+                Valid email is required
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone Number</label>
+              <input 
+                type="tel" 
+                class="form-control" 
+                id="phone" 
+                formControlName="phone"
+                [class.is-invalid]="checkoutForm.get('phone')?.invalid && checkoutForm.get('phone')?.touched"
+              >
+              <div class="invalid-feedback">
+                Phone number is required
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="address" class="form-label">Shipping Address</label>
+              <textarea 
+                class="form-control" 
+                id="address" 
+                rows="3" 
+                formControlName="address"
+                [class.is-invalid]="checkoutForm.get('address')?.invalid && checkoutForm.get('address')?.touched"
+              ></textarea>
+              <div class="invalid-feedback">
+                Address is required
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="city" class="form-label">City</label>
+              <input 
+                type="text" 
+                class="form-control" 
+                id="city" 
+                formControlName="city"
+                [class.is-invalid]="checkoutForm.get('city')?.invalid && checkoutForm.get('city')?.touched"
+              >
+              <div class="invalid-feedback">
+                City is required
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="paymentMethod" class="form-label">Payment Method</label>
+              <select 
+                class="form-select" 
+                id="paymentMethod" 
+                formControlName="paymentMethod"
+                [class.is-invalid]="checkoutForm.get('paymentMethod')?.invalid && checkoutForm.get('paymentMethod')?.touched"
+              >
+                <option value="">Select payment method</option>
+                <option value="credit">Credit Card</option>
+                <option value="debit">Debit Card</option>
+                <option value="paypal">PayPal</option>
+              </select>
+              <div class="invalid-feedback">
+                Please select a payment method
+              </div>
+            </div>
+
+            <button 
+              type="submit" 
+              class="btn btn-primary w-100"
+              [disabled]="checkoutForm.invalid || cartItems.length === 0"
+            >
+              Place Order
+            </button>
+          </form>
+        </div>
       </div>
     </div>
-
-    <div class="form-group">
-      <label for="address">Address</label>
-      <input type="text" id="address" class="form-control" formControlName="address" [ngClass]="{'is-invalid': submitted && f.address.errors}" />
-      <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
-        <div *ngIf="f.address.errors.required">Address is required</div>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="city">City</label>
-      <input type="text" id="city" class="form-control" formControlName="city" [ngClass]="{'is-invalid': submitted && f.city.errors}" />
-      <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
-        <div *ngIf="f.city.errors.required">City is required</div>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="zip">Zip Code</label>
-      <input type="text" id="zip" class="form-control" formControlName="zip" [ngClass]="{'is-invalid': submitted && f.zip.errors}" />
-      <div *ngIf="submitted && f.zip.errors" class="invalid-feedback">
-        <div *ngIf="f.zip.errors.required">Zip code is required</div>
-        <div *ngIf="f.zip.errors.pattern">Enter a valid 5-digit zip code</div>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="cardNumber">Card Number</label>
-      <input type="text" id="cardNumber" class="form-control" formControlName="cardNumber" [ngClass]="{'is-invalid': submitted && f.cardNumber.errors}" />
-      <div *ngIf="submitted && f.cardNumber.errors" class="invalid-feedback">
-        <div *ngIf="f.cardNumber.errors.required">Card number is required</div>
-        <div *ngIf="f.cardNumber.errors.pattern">Enter a valid 16-digit card number</div>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="expirationDate">Expiration Date (MM/YY)</label>
-      <input type="text" id="expirationDate" class="form-control" formControlName="expirationDate" [ngClass]="{'is-invalid': submitted && f.expirationDate.errors}" />
-      <div *ngIf="submitted && f.expirationDate.errors" class="invalid-feedback">
-        <div *ngIf="f.expirationDate.errors.required">Expiration date is required</div>
-        <div *ngIf="f.expirationDate.errors.pattern">Enter a valid expiration date (MM/YY)</div>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="cvv">CVV</label>
-      <input type="text" id="cvv" class="form-control" formControlName="cvv" [ngClass]="{'is-invalid': submitted && f.cvv.errors}" />
-      <div *ngIf="submitted && f.cvv.errors" class="invalid-feedback">
-        <div *ngIf="f.cvv.errors.required">CVV is required</div>
-        <div *ngIf="f.cvv.errors.pattern">Enter a valid 3-digit CVV</div>
-      </div>
-    </div>
-
-    <button type="submit" class="btn btn-primary">Complete Purchase</button>
-  </form>
+  </div>
 </div>
