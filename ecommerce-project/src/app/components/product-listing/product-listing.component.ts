@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, output, } from '@angular/core';
 import { CommonModule } from '@angular/common';  // Import CommonModule for ngFor and other common directives
 import { Product } from '../../models/product.model';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-product-listing',
@@ -10,6 +11,8 @@ import { Product } from '../../models/product.model';
   imports: [CommonModule]  // Import CommonModule for use in the template
 })
 export class ProductListingComponent implements OnInit {
+
+
   products: Product[] = [
     {
       id: 1,
@@ -43,12 +46,12 @@ export class ProductListingComponent implements OnInit {
 
   currentYear: number = new Date().getFullYear();  // لعرض السنة الحالية في الـ footer
 
-  constructor() { }
-
+  constructor(private cartService: CartService) { }
   ngOnInit(): void {
   }
 
   addToCart(product: Product): void {
-    console.log(`Product added to cart: ${product.name}`);
+    this.cartService.addToCart(product);
   }
+
 }
