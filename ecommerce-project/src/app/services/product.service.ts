@@ -13,6 +13,6 @@ export class ProductService {
   ];
 
   getProducts(): Observable<Product[]> {
-    return of(this.products); // Simulate API with RxJS Observable
+    return of(this.products);
   }
 }

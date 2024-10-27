@@ -5,7 +5,7 @@ import { Product } from '../../models/product.model';
 
 @Component({
   selector: 'app-cart',
-  standalone: true, // أضيفي هذه الخاصية
+  standalone: true,
   imports: [CommonModule],
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss']
@@ -22,8 +22,13 @@ export class CartComponent implements OnInit {
   }
 
   removeFromCart(productId: number): void {
-    this.cartService.removeFromCart(productId);
-    this.cartItems = this.cartService.getCartItems();
-    this.cartTotal = this.cartService.getCartTotal();
+    const itemIndex = this.cartItems.findIndex(item => item.id === productId);
+    if (itemIndex > -1) {
+      this.cartItems.splice(itemIndex, 1);
+      this.cartTotal = this.cartItems.reduce((total, item) => total + item.price, 0);
+    }
+
   }
+
+
 }

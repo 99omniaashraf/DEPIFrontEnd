@@ -27,4 +27,7 @@ export class CartService {
     this.cart = [];
     localStorage.removeItem('cart');
   }
+
+
+
 }
