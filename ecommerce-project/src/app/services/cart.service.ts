@@ -24,8 +24,7 @@ export class CartService {
   }
 
   clearCart(): void {
-    // Add this method if it doesn't exist
+    this.cart = [];
     localStorage.removeItem('cart');
-    // If you're using a different storage method, adjust accordingly
   }
 }
