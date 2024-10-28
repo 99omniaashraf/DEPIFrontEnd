@@ -14,5 +14,10 @@ export class ProductService {
 
   getProducts(): Observable<Product[]> {
     return of(this.products); // Simulate API with RxJS Observable
-  }
+  };
+
+  getProductById(id: number) {
+    return this.products.find(product => product.id === id);
+}
+
 }

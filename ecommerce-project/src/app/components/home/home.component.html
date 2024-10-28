@@ -128,4 +128,101 @@
   </div>
 </section>
 
+<section id="contact-us" class="contact-section py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Have Any Questions?</h2>
+    <div class="title-underline mx-auto"></div>
+    <p class="lead text-center mb-5">Feel free to reach out to us!</p>
+
+    <div class="row">
+      <!-- Contact Form Column -->
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)" novalidate>
+          <div class="row">
+            <!-- Name Field -->
+            <div class="col-md-6 mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input
+                type="text"
+                id="name"
+                class="form-control"
+                required
+                [(ngModel)]="model.name"
+                name="name"
+                #name="ngModel"
+                [class.is-invalid]="name.invalid && name.touched"
+              />
+              <div class="invalid-feedback" *ngIf="name.invalid && name.touched">
+                Name is required.
+              </div>
+            </div>
+
+            <!-- Email Field -->
+            <div class="col-md-6 mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input
+                type="email"
+                id="email"
+                class="form-control"
+                required
+                email
+                [(ngModel)]="model.email"
+                name="email"
+                #email="ngModel"
+                [class.is-invalid]="email.invalid && email.touched"
+              />
+              <div class="invalid-feedback" *ngIf="email.invalid && email.touched">
+                <span *ngIf="email.errors?.['required']">Email is required.</span>
+                <span *ngIf="email.errors?.['email']">Please enter a valid email.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Message Field -->
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea
+              id="message"
+              class="form-control"
+              rows="4"
+              required
+              [(ngModel)]="model.message"
+              name="message"
+              #message="ngModel"
+              [class.is-invalid]="message.invalid && message.touched"
+            ></textarea>
+            <div class="invalid-feedback" *ngIf="message.invalid && message.touched">
+              Message is required.
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <button
+            type="submit"
+            class="btn btn-primary"
+
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+
+      <!-- Map Column -->
+      <div class="col-lg-6">
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=YOUR_MAP_URL_HERE"
+            width="100%"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
   </main>

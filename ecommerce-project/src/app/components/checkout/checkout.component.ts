@@ -34,13 +34,13 @@ export class CheckoutComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.cartItems = this.cartService.getCartItems();
+    this.cartItems = this.cartService.getCart();
     this.cartTotal = this.cartService.getCartTotal();
   }
 
   removeFromCart(productId: number): void {
     this.cartService.removeFromCart(productId);
-    this.cartItems = this.cartService.getCartItems();
+    this.cartItems = this.cartService.getCart();
     this.cartTotal = this.cartService.getCartTotal();
   }
 
@@ -53,7 +53,7 @@ export class CheckoutComponent implements OnInit {
       };
 
       console.log('Order placed:', orderData);
-      
+
       // Clear cart and reset form after successful order
       this.cartService.clearCart();
       this.checkoutForm.reset();

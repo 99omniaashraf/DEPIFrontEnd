@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app.routes';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProductListingComponent } from './components/product-listing/product-listing.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -21,6 +22,7 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     HomeComponent,
     ProductListingComponent,
+    ProductDetailComponent,
     CartComponent,
     CheckoutComponent,
     FooterComponent,

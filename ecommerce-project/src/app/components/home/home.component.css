@@ -79,15 +79,15 @@
 }
 
 .btn-custom-login {
-  color: #000; 
-  background-color: #e7c07d; 
-  border-color: #e7c07d; 
+  color: #000;
+  background-color: #e7c07d;
+  border-color: #e7c07d;
 }
 
 .btn-custom-login:hover {
-  color: #ffff; 
-  background-color: #000; 
-  border-color: #e7c07d; 
+  color: #ffff;
+  background-color: #000;
+  border-color: #e7c07d;
 }
 
 /* Enhanced About Section Styles */
@@ -280,3 +280,93 @@
   height: auto;
   border-bottom: 1px solid #e1e1e1;
 }
+
+.contact-section {
+  background-image: url('/assets/images/picture4.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+/* لجعل المحتوى أكثر وضوحاً فوق الصورة، يمكننا إضافة طبقة شفافة */
+.contact-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(149, 146, 146, 0.8); /* طبقة بيضاء شفافة */
+  z-index: 1;
+}
+
+/* تأكد من أن المحتوى يظهر فوق الطبقة الشفافة */
+.contact-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* لتحسين مظهر النص على الخلفية */
+.contact-section h2,
+.contact-section .lead {
+  color: #333; /* أو أي لون آخر يناسب تصميمك */
+}
+
+/* .contact-section {
+  background-color: #f8f9fa;
+}
+
+.contact-section h2 {
+  color: #333;
+}
+
+.contact-section .form-label {
+  font-weight: bold;
+} */
+
+.contact-section .btn {
+  margin-top: 10px;
+}
+
+.map-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.map-container iframe {
+  min-height: 400px;
+}
+
+@media (max-width: 991.98px) {
+  .map-container {
+    margin-top: 2rem;
+  }
+}
+
+
+/* Add these styles to your component's CSS file */
+
+.btn-primary {
+  background-color:  #e7c07d;
+  border-color: #e7c07d;
+}
+
+.btn-primary:hover {
+  background-color: #000;
+  border-color: #000;
+}
+
+.btn-outline-light {
+  color: #fff;
+  border-color: #fff;
+}
+
+.btn-outline-light:hover {
+  background-color: #fff;
+  color: #000;
+}
+

@@ -1,27 +1,9 @@
-.hero-section {
-  position: relative;
-  min-height: 100vh;
-  background-image: url('/assets/images/picture3.jpg'); /* تأكد من وضع الصورة في مجلد assets */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 120px 0;
+/* src/app/components/product-detail/product-detail.component.css */
+.card {
+  max-width: 24rem;
+  margin: auto;
 }
-
-/* طبقة التعتيم فوق الصورة */
-.hero-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* يمكنك تعديل درجة الشفافية */
-  z-index: 1;
-}
-
-/* تأكد من أن المحتوى يظهر فوق طبقة التعتيم */
-.hero-section .container {
-  position: relative;
-  z-index: 2;
+.card-img-top {
+  max-height: 200px;
+  object-fit: cover;
 }

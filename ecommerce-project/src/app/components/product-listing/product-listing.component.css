@@ -1,0 +1,53 @@
+.products-section {
+  background-color: #f8f9fa;
+  margin-top: 25px;
+}
+
+.product-card {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-image img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  display: inline-block;
+}
+
+.price {
+  font-size: 1.1rem;
+}
+
+.social-links button {
+  text-decoration: none;
+}
+
+.social-links button:hover {
+  color: #0d6efd !important;
+}
+
+/* RTL Support */
+[dir="rtl"] .me-2 {
+  margin-left: 0.5rem !important;
+  margin-right: 0 !important;
+}
+
+.btn-in-stock {
+  background-color: #e7c07d; /* لون عند توفر المنتج */
+  color: white;
+}
+
+.btn-out-of-stock {
+  background-color: #D3D3D3; /* لون عند عدم توفر المنتج */
+  color: #6c757d;
+}
