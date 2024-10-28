@@ -24,7 +24,7 @@ import { FormsModule } from '@angular/forms';
     ProductListingComponent,
     ProductDetailComponent,
     CartComponent,
-   
+    
     FooterComponent,
     NavbarComponent,
     LoginComponent,
