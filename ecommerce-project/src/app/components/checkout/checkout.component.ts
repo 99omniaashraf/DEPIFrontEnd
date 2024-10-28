@@ -11,18 +11,23 @@ import { Product } from '../../models/product.model';
   standalone: true,
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ]
 })
 export class CheckoutComponent implements OnInit {
   cartItems: Product[] = [];
   cartTotal: number = 0;
-  checkoutForm: FormGroup;
+  checkoutForm!: FormGroup;
 
-  constructor(
-    private cartService: CartService,
-    private fb: FormBuilder
-  ) {
+
+
+
+
+  constructor(private cartService: CartService, private fb: FormBuilder) { }
+
+  ngOnInit(): void {
+    this.cartItems = this.cartService.getCartItems();
+    this.cartTotal = this.cartService.getCartTotal();
     this.checkoutForm = this.fb.group({
       fullName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -33,6 +38,7 @@ export class CheckoutComponent implements OnInit {
     });
   }
 
+<<<<<<< HEAD
   ngOnInit(): void {
     this.cartItems = this.cartService.getCart();
     this.cartTotal = this.cartService.getCartTotal();
@@ -44,8 +50,10 @@ export class CheckoutComponent implements OnInit {
     this.cartTotal = this.cartService.getCartTotal();
   }
 
+=======
+>>>>>>> 6883f36f1f0d42136267807d2e8b559d1bcbd3b2
   onSubmit(): void {
-    if (this.checkoutForm.valid && this.cartItems.length > 0) {
+    if (this.checkoutForm.valid) {
       const orderData = {
         items: this.cartItems,
         total: this.cartTotal,
@@ -63,4 +71,12 @@ export class CheckoutComponent implements OnInit {
       alert('Order placed successfully!');
     }
   }
+<<<<<<< HEAD
 }
+=======
+
+  removeFromCart(productId: number): void {
+    this.cartService.removeFromCart(productId);
+  }
+}
+>>>>>>> 6883f36f1f0d42136267807d2e8b559d1bcbd3b2

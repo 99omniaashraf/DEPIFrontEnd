@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule } from '@angular/common';  // Import CommonModule for ngFor and other common directives
 import { Product } from '../../models/product.model';
-import { ProductDetailComponent } from '../product-detail/product-detail.component';
 
 @Component({
   selector: 'app-product-listing',
@@ -11,6 +10,8 @@ import { ProductDetailComponent } from '../product-detail/product-detail.compone
   imports: [CommonModule, ProductDetailComponent]
 })
 export class ProductListingComponent implements OnInit {
+
+
   products: Product[] = [
     {
       id: 1,
@@ -64,15 +65,11 @@ export class ProductListingComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+  }
 
   addToCart(product: Product): void {
-    if (product.inStock) {
-      console.log(`Product added to cart: ${product.name}`);
-    }
+    console.log(`Product added to cart: ${product.name}`);
   }
 
-  shareOnSocial(platform: string, product: Product): void {
-    console.log(`Sharing ${product.name} on ${platform}`);
-  }
 }

@@ -41,6 +41,7 @@ export class CartService {
   }
 
   clearCart(): void {
+<<<<<<< HEAD
     this.cartSubject.next([]);
   }
 
@@ -53,5 +54,12 @@ export class CartService {
       (total, item) => total + (item.price * item.quantity),
       0
     );
+=======
+    this.cart = [];
+    localStorage.removeItem('cart');
+>>>>>>> 6883f36f1f0d42136267807d2e8b559d1bcbd3b2
   }
+
+
+
 }

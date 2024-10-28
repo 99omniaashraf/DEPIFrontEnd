@@ -13,6 +13,7 @@ export class ProductService {
   ];
 
   getProducts(): Observable<Product[]> {
+<<<<<<< HEAD
     return of(this.products); // Simulate API with RxJS Observable
   };
 
@@ -20,4 +21,8 @@ export class ProductService {
     return this.products.find(product => product.id === id);
 }
 
+=======
+    return of(this.products);
+  }
+>>>>>>> 6883f36f1f0d42136267807d2e8b559d1bcbd3b2
 }

@@ -17,7 +17,7 @@ export class CartComponent implements OnInit, OnDestroy {
   cartTotal: number = 0;
   private cartSubscription?: Subscription;
 
-  constructor(private cartService: CartService) {}
+  constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
     this.cartSubscription = this.cartService.cart$.subscribe(items => {
@@ -31,6 +31,7 @@ export class CartComponent implements OnInit, OnDestroy {
   }
 
   removeFromCart(productId: number): void {
+<<<<<<< HEAD
     this.cartService.removeFromCart(productId);
   }
 
@@ -51,5 +52,15 @@ export class CartComponent implements OnInit, OnDestroy {
 
   get hasItems(): boolean {
     return this.cartItems.length > 0;
+=======
+    const itemIndex = this.cartItems.findIndex(item => item.id === productId);
+    if (itemIndex > -1) {
+      this.cartItems.splice(itemIndex, 1);
+      this.cartTotal = this.cartItems.reduce((total, item) => total + item.price, 0);
+    }
+
+>>>>>>> 6883f36f1f0d42136267807d2e8b559d1bcbd3b2
   }
+
+
 }

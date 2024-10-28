@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="cart-container" *ngIf="hasItems; else emptyCart">
   <div class="cart-items">
     <div *ngFor="let item of cartItems" class="cart-item">
@@ -25,3 +26,38 @@
     <p>Your cart is empty</p>
   </div>
 </ng-template>
+=======
+<div class="container">
+  <h3>Shopping Cart</h3>
+  <div class="row">
+    <div class="col-md-8">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Image</th>
+            <th>Price</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of cartItems">
+            <td>{{ item.name }}</td>
+            <td>
+              <img [src]="item.imageUrl" alt="{{ item.name }}" class="product-image">
+            </td>
+            <td>${{ item.price }}</td>
+            <td>
+              <button class="btn btn-danger" (click)="removeFromCart(item.id)">Remove</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-4">
+      <h4>Total: ${{ cartTotal }}</h4>
+      <button routerLink="/checkout" class="btn btn-success">Proceed to Checkout</button>
+    </div>
+  </div>
+</div>
+>>>>>>> 6883f36f1f0d42136267807d2e8b559d1bcbd3b2
