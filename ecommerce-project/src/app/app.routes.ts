@@ -4,7 +4,6 @@ import { HomeComponent } from './components/home/home.component';
 import { ProductListingComponent } from './components/product-listing/product-listing.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { CartComponent } from './components/cart/cart.component';
-import { CheckoutComponent } from './components/checkout/checkout.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/auth/login/login.component';
@@ -15,7 +14,7 @@ export const routes: Routes = [
   { path: 'products', component: ProductListingComponent },
   { path: 'product/:id', component: ProductDetailComponent},
   { path: 'cart', component: CartComponent },
-  { path: 'checkout', component: CheckoutComponent},
+
   { path: 'footer', component: FooterComponent},
   { path: 'navbar', component: NavbarComponent},
   { path: 'login', component: LoginComponent },

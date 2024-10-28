@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';  // Import CommonModule for ngFor and other common directives
-import { Product } from '../../models/product.model';
+import { Product } from '../../models/product.interface';
+import { RouterModule } from '@angular/router';  // Import RouterModule
+import { ProductDetailComponent } from '../product-detail/product-detail.component';  // Import ProductDetailComponent
 
 @Component({
   selector: 'app-product-listing',
   templateUrl: './product-listing.component.html',
   styleUrls: ['./product-listing.component.css'],
   standalone: true,
-  imports: [CommonModule, ProductDetailComponent]
+  imports: [CommonModule, RouterModule, ProductDetailComponent]
 })
 export class ProductListingComponent implements OnInit {
 

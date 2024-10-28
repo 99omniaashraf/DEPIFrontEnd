@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../../services/product.service';
+import { Product } from '../../models/product.interface';
 
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
   styleUrls: ['./product-detail.component.css'],
-  standalone: true // Add this line to make it a standalone component
+  standalone: true
 })
 export class ProductDetailComponent implements OnInit {
-  product: any;
+  product: Product | undefined;
 
   constructor(
     private route: ActivatedRoute,
@@ -20,11 +21,22 @@ export class ProductDetailComponent implements OnInit {
     const productId = this.route.snapshot.paramMap.get('id');
 
     if (productId) {
-      // Convert productId to a number before passing it to getProductById
-      this.product = this.productService.getProductById(Number(productId)); // Ensure productId is a number
+      // تحويل productId إلى رقم وتمريره إلى getProductById
+      this.product = this.productService.getProductById(Number(productId));
+
+      if (!this.product) {
+        console.error('Product not found');
+      }
     } else {
-      // Handle the case where productId is null
       console.error('Product ID is null');
+    }
+  }
+
+  addToCart(): void {
+    if (this.product) {
+      console.log('تمت إضافة المنتج إلى عربة التسوق:', this.product);
+    } else {
+      console.error('لا يمكن إضافة المنتج إلى عربة التسوق لأن المنتج غير موجود.');
     }
   }
 }

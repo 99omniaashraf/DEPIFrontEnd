@@ -8,7 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ProductListingComponent } from './components/product-listing/product-listing.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { CartComponent } from './components/cart/cart.component';
-import { CheckoutComponent } from './components/checkout/checkout.component';
+
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/auth/login/login.component';
@@ -24,7 +24,7 @@ import { FormsModule } from '@angular/forms';
     ProductListingComponent,
     ProductDetailComponent,
     CartComponent,
-    CheckoutComponent,
+   
     FooterComponent,
     NavbarComponent,
     LoginComponent,

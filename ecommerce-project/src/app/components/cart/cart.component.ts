@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CartService } from '../../services/cart.service';
-import { Product } from '../../models/product.model';
+import { Product } from '../../models/product.interface';
 import { Cart } from '../../models/cart.model';
 import { Subscription } from 'rxjs';
 
@@ -20,6 +20,7 @@ export class CartComponent implements OnInit, OnDestroy {
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
+    // الاشتراك في التغيرات على سلة التسوق
     this.cartSubscription = this.cartService.cart$.subscribe(items => {
       this.cartItems = items;
       this.calculateTotal();
@@ -27,12 +28,14 @@ export class CartComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    // إلغاء الاشتراك عند تدمير المكون
     this.cartSubscription?.unsubscribe();
   }
 
   removeFromCart(productId: number): void {
-<<<<<<< HEAD
     this.cartService.removeFromCart(productId);
+    // بعد إزالة المنتج من السلة، يجب إعادة حساب الإجمالي
+    this.calculateTotal();
   }
 
   updateQuantity(productId: number, newQuantity: number): void {
@@ -44,6 +47,7 @@ export class CartComponent implements OnInit, OnDestroy {
   }
 
   private calculateTotal(): void {
+    // حساب المجموع الكلي للعناصر في السلة
     this.cartTotal = this.cartItems.reduce(
       (total, item) => total + (item.price * item.quantity),
       0
@@ -51,16 +55,7 @@ export class CartComponent implements OnInit, OnDestroy {
   }
 
   get hasItems(): boolean {
+    // التحقق مما إذا كانت السلة تحتوي على عناصر
     return this.cartItems.length > 0;
-=======
-    const itemIndex = this.cartItems.findIndex(item => item.id === productId);
-    if (itemIndex > -1) {
-      this.cartItems.splice(itemIndex, 1);
-      this.cartTotal = this.cartItems.reduce((total, item) => total + item.price, 0);
-    }
-
->>>>>>> 6883f36f1f0d42136267807d2e8b559d1bcbd3b2
   }
-
-
 }
