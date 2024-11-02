@@ -25,7 +25,7 @@ export class CheckoutComponent implements OnInit {
   checkoutForm!: FormGroup;
 
 
-  constructor(private cartService: CartService, private fb: FormBuilder) { }
+  constructor(public cartService: CartService, private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.cartItems = this.cartService.getCartItems();
@@ -63,7 +63,9 @@ export class CheckoutComponent implements OnInit {
   removeFromCart(productId: number): void {
     this.cartItems = this.cartItems.filter(item => item.id !== productId);
     this.cartService.removeFromCart(productId);
+    this.cartTotal = this.cartItems.reduce((total, item) => total + (item.price * (item.quantity ?? 0)), 0);
   }
+
 
 
 

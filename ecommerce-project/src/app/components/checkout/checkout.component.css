@@ -1,12 +1,111 @@
+/* Container and Card */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
 .card {
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  /* Reduced shadow to prevent popping */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  /* Smooth transition without exaggerated shadow */
 }
+
 .card-header {
-  border-bottom: 0;
+  background-color: #f4f4f4;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #333;
+  padding: 15px;
+  border-bottom: 1px solid #eaeaea;
 }
-.btn-primary {
-  padding: 10px 20px;
+
+/* Order Summary Section */
+.card-body {
+  padding: 20px;
 }
-.invalid-feedback {
+
+.order-summary-item {
+  border-bottom: 1px solid #eaeaea;
+  padding: 10px 0;
+}
+
+.order-summary-item:last-child {
+  border-bottom: none;
+}
+
+.order-summary-item h6 {
+  font-weight: 600;
+  color: #333;
+}
+
+.order-summary-item small {
   display: block;
+  color: #888;
+}
+
+/* Total Styling */
+.total {
+  font-weight: 700;
+  color: #333;
+}
+
+/* Buttons */
+.btn-danger {
+  background-color: #ff6b6b;
+  border: none;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.btn-danger:hover {
+  background-color: #ff4c4c;
+}
+
+/* Form Styling */
+.form-label {
+  font-weight: 600;
+  color: #444;
+}
+
+.form-control,
+.form-select {
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+}
+
+.invalid-feedback {
+  font-size: 0.85rem;
+  color: #ff4c4c;
+}
+
+/* Submit Button */
+.submit-btn {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #555;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+
+  .card-header h4,
+  .total h5 {
+    font-size: 1.1rem;
+  }
+
+  .submit-btn {
+    width: 100%;
+  }
 }

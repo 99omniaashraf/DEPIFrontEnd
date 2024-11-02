@@ -1,6 +1,8 @@
 @import 'bootstrap-icons/font/bootstrap-icons.css';
 @import '@fortawesome/fontawesome-free/css/all.min.css';
 /* You can add global styles to this file, and also import other style files */
+
+
 button {
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
@@ -32,7 +34,8 @@ input.ng-invalid.ng-touched {
 .hero-section {
   position: relative;
   min-height: 100vh;
-  background-image: url('/ecommerce-project/src/assets/picture3.jpg'); /* تأكد من وضع الصورة في مجلد assets */
+  background-image: url('/ecommerce-project/src/assets/picture3.jpg');
+  /* تأكد من وضع الصورة في مجلد assets */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -47,7 +50,8 @@ input.ng-invalid.ng-touched {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* يمكنك تعديل درجة الشفافية */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* يمكنك تعديل درجة الشفافية */
   z-index: 1;
 }
 
@@ -99,7 +103,9 @@ input.ng-invalid.ng-touched {
   .table {
     font-size: 14px;
   }
-  h3, h4 {
+
+  h3,
+  h4 {
     font-size: 18px;
   }
 }
@@ -109,7 +115,3 @@ input.ng-invalid.ng-touched {
     display: block;
   }
 }
-
-
-
-

@@ -22,7 +22,8 @@ export class ProductListingComponent implements OnInit {
       description: 'Description for Product 1',
       price: 100,
       imageUrl: '/assets/images/picture1.jpg',
-      inStock: true
+      inStock: true,
+      quantity: 0
     },
     {
       id: 2,
@@ -30,7 +31,8 @@ export class ProductListingComponent implements OnInit {
       description: 'Description for Product 2',
       price: 200,
       imageUrl: '/assets/images/picture2.jpg',
-      inStock: true
+      inStock: true,
+      quantity: 0
     },
     {
       id: 3,
@@ -38,7 +40,8 @@ export class ProductListingComponent implements OnInit {
       description: 'Description for Product 3',
       price: 300,
       imageUrl: '/assets/images/picture6.jpg',
-      inStock: false
+      inStock: false,
+      quantity: 0
     },
     {
       id: 1,
@@ -46,7 +49,8 @@ export class ProductListingComponent implements OnInit {
       description: 'Description for Product 4',
       price: 100,
       imageUrl: '/assets/images/picture25.jpg',
-      inStock: true
+      inStock: true,
+      quantity: 0
     },
     {
       id: 2,
@@ -54,7 +58,8 @@ export class ProductListingComponent implements OnInit {
       description: 'Description for Product 5',
       price: 200,
       imageUrl: '/assets/images/picture26.jpg',
-      inStock: true
+      inStock: true,
+      quantity: 0
     },
     {
       id: 3,
@@ -62,7 +67,8 @@ export class ProductListingComponent implements OnInit {
       description: 'Description for Product 6',
       price: 300,
       imageUrl: '/assets/images/picture27.jpg',
-      inStock: true
+      inStock: true,
+      quantity: 0
     }
   ];
 

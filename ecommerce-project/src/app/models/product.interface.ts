@@ -1,3 +1,5 @@
+import { Cart } from './cart.model';
+
 export interface Product {
   id: number;
   name: string;
@@ -5,4 +7,5 @@ export interface Product {
   price: number;
   imageUrl: string;
   inStock?: boolean;
+  quantity: number;
 }
