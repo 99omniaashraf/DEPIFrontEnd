@@ -2,14 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';  // Import CommonModule for ngFor and other common directives
 import { Product } from '../../models/product.interface';
 import { RouterModule } from '@angular/router';  // Import RouterModule
-import { ProductDetailComponent } from '../product-detail/product-detail.component';  // Import ProductDetailComponent
+import { ProductDetailComponent } from '../product-detail/product-detail.component';
+import { CartService } from '../../services/cart.service';  // Import ProductDetailComponent
 
 @Component({
   selector: 'app-product-listing',
   templateUrl: './product-listing.component.html',
   styleUrls: ['./product-listing.component.css'],
   standalone: true,
-  imports: [CommonModule, RouterModule, ProductDetailComponent]
+  imports: [CommonModule, RouterModule, ProductDetailComponent,],
 })
 export class ProductListingComponent implements OnInit {
 
@@ -65,13 +66,14 @@ export class ProductListingComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
   }
+  private cart: Product[] = [];
 
   addToCart(product: Product): void {
-    console.log(`Product added to cart: ${product.name}`);
+    this.cartService.addToCart(product);
   }
 
 }
