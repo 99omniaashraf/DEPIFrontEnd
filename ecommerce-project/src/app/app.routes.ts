@@ -10,15 +10,21 @@ import { LoginComponent } from './components/auth/login/login.component';
 import { SignupComponent } from './components/auth/signup/signup.component';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent},
+  { path: '', component: HomeComponent },
   { path: 'products', component: ProductListingComponent },
   { path: 'product/:id', component: ProductDetailComponent},
   { path: 'cart', component: CartComponent },
+<<<<<<< HEAD
 
   { path: 'footer', component: FooterComponent},
   { path: 'navbar', component: NavbarComponent},
+=======
+  { path: 'checkout', component: CheckoutComponent },
+  { path: 'footer', component: FooterComponent },
+  { path: 'navbar', component: NavbarComponent },
+>>>>>>> 4c80c3c (checkout)
   { path: 'login', component: LoginComponent },
-  { path: 'signup', component: SignupComponent},
+  { path: 'signup', component: SignupComponent },
   { path: '', redirectTo: '/products', pathMatch: 'full' }
 ];
 
@@ -26,4 +32,4 @@ export const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

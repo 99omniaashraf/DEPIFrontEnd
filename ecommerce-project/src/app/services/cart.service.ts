@@ -1,15 +1,29 @@
 // src/app/services/cart.service.ts
 import { Injectable } from '@angular/core';
+<<<<<<< HEAD
 import { BehaviorSubject } from 'rxjs';
 import { Product } from '../models/product.interface';
 import { Cart } from '../models/cart.model';
+=======
+import { Product } from '../models/product.model';
+import { Router } from '@angular/router';
+>>>>>>> 4c80c3c (checkout)
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
+<<<<<<< HEAD
   private cartSubject = new BehaviorSubject<Cart[]>([]);
   cart$ = this.cartSubject.asObservable();
+=======
+  private cart: Product[] = [];
+  private router: Router;
+
+  constructor(router: Router) {
+    this.router = router;
+  }
+>>>>>>> 4c80c3c (checkout)
 
   constructor() {
       // Load cart from localStorage on service initialization
@@ -62,6 +76,7 @@ export class CartService {
       this.cartSubject.next([]);
   }
 
+<<<<<<< HEAD
   getCart(): Cart[] {
       return this.cartSubject.value;
   }
@@ -72,4 +87,10 @@ export class CartService {
           0
       );
   }
+=======
+  checkout(): void {
+    this.router.navigate(['/checkout']);
+  }
+
+>>>>>>> 4c80c3c (checkout)
 }
