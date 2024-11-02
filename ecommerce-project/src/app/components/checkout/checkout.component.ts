@@ -15,7 +15,7 @@ import { ProductListingComponent } from '../product-listing/product-listing.comp
     CommonModule,
     ReactiveFormsModule,
     CartComponent,
-    ProductListingComponent
+    ProductListingComponent,
   ],
 
 })
@@ -61,8 +61,10 @@ export class CheckoutComponent implements OnInit {
   }
 
   removeFromCart(productId: number): void {
+    this.cartItems = this.cartItems.filter(item => item.id !== productId);
     this.cartService.removeFromCart(productId);
   }
+
 
 
 }

@@ -35,13 +35,8 @@
           <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
             <div class="mb-3">
               <label for="fullName" class="form-label">Full Name</label>
-              <input 
-                type="text" 
-                class="form-control" 
-                id="fullName" 
-                formControlName="fullName"
-                [class.is-invalid]="checkoutForm.get('fullName')?.invalid && checkoutForm.get('fullName')?.touched"
-              >
+              <input type="text" class="form-control" id="fullName" formControlName="fullName"
+                [class.is-invalid]="checkoutForm.get('fullName')?.invalid && checkoutForm.get('fullName')?.touched">
               <div class="invalid-feedback">
                 Full name is required
               </div>
@@ -49,13 +44,8 @@
 
             <div class="mb-3">
               <label for="email" class="form-label">Email</label>
-              <input 
-                type="email" 
-                class="form-control" 
-                id="email" 
-                formControlName="email"
-                [class.is-invalid]="checkoutForm.get('email')?.invalid && checkoutForm.get('email')?.touched"
-              >
+              <input type="email" class="form-control" id="email" formControlName="email"
+                [class.is-invalid]="checkoutForm.get('email')?.invalid && checkoutForm.get('email')?.touched">
               <div class="invalid-feedback">
                 Valid email is required
               </div>
@@ -63,13 +53,8 @@
 
             <div class="mb-3">
               <label for="phone" class="form-label">Phone Number</label>
-              <input 
-                type="tel" 
-                class="form-control" 
-                id="phone" 
-                formControlName="phone"
-                [class.is-invalid]="checkoutForm.get('phone')?.invalid && checkoutForm.get('phone')?.touched"
-              >
+              <input type="tel" class="form-control" id="phone" formControlName="phone"
+                [class.is-invalid]="checkoutForm.get('phone')?.invalid && checkoutForm.get('phone')?.touched">
               <div class="invalid-feedback">
                 Phone number is required
               </div>
@@ -77,13 +62,8 @@
 
             <div class="mb-3">
               <label for="address" class="form-label">Shipping Address</label>
-              <textarea 
-                class="form-control" 
-                id="address" 
-                rows="3" 
-                formControlName="address"
-                [class.is-invalid]="checkoutForm.get('address')?.invalid && checkoutForm.get('address')?.touched"
-              ></textarea>
+              <textarea class="form-control" id="address" rows="3" formControlName="address"
+                [class.is-invalid]="checkoutForm.get('address')?.invalid && checkoutForm.get('address')?.touched"></textarea>
               <div class="invalid-feedback">
                 Address is required
               </div>
@@ -91,13 +71,8 @@
 
             <div class="mb-3">
               <label for="city" class="form-label">City</label>
-              <input 
-                type="text" 
-                class="form-control" 
-                id="city" 
-                formControlName="city"
-                [class.is-invalid]="checkoutForm.get('city')?.invalid && checkoutForm.get('city')?.touched"
-              >
+              <input type="text" class="form-control" id="city" formControlName="city"
+                [class.is-invalid]="checkoutForm.get('city')?.invalid && checkoutForm.get('city')?.touched">
               <div class="invalid-feedback">
                 City is required
               </div>
@@ -105,12 +80,8 @@
 
             <div class="mb-3">
               <label for="paymentMethod" class="form-label">Payment Method</label>
-              <select 
-                class="form-select" 
-                id="paymentMethod" 
-                formControlName="paymentMethod"
-                [class.is-invalid]="checkoutForm.get('paymentMethod')?.invalid && checkoutForm.get('paymentMethod')?.touched"
-              >
+              <select class="form-select" id="paymentMethod" formControlName="paymentMethod"
+                [class.is-invalid]="checkoutForm.get('paymentMethod')?.invalid && checkoutForm.get('paymentMethod')?.touched">
                 <option value="">Select payment method</option>
                 <option value="credit">Credit Card</option>
                 <option value="debit">Debit Card</option>
@@ -121,11 +92,8 @@
               </div>
             </div>
 
-            <button 
-              type="submit" 
-              class="btn btn-primary w-100"
-              [disabled]="checkoutForm.invalid || cartItems.length === 0"
-            >
+            <button type="submit" class="btn btn-primary w-100"
+              [disabled]="checkoutForm.invalid || cartItems.length === 0">
               Place Order
             </button>
           </form>

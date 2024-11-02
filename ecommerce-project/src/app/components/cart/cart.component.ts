@@ -23,7 +23,6 @@ export class CartComponent implements OnInit, OnDestroy {
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
-    // الاشتراك في التغيرات على سلة التسوق
     this.cartSubscription = this.cartService.cart$.subscribe(items => {
       this.cartItems = items;
       this.calculateTotal();
@@ -31,13 +30,11 @@ export class CartComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    // إلغاء الاشتراك عند تدمير المكون
     this.cartSubscription?.unsubscribe();
   }
 
   removeFromCart(productId: number): void {
     this.cartService.removeFromCart(productId);
-    // بعد إزالة المنتج من السلة، يجب إعادة حساب الإجمالي
     this.calculateTotal();
   }
 
@@ -50,7 +47,6 @@ export class CartComponent implements OnInit, OnDestroy {
   }
 
   private calculateTotal(): void {
-    // حساب المجموع الكلي للعناصر في السلة
     this.cartTotal = this.cartItems.reduce(
       (total, item) => total + (item.price * item.quantity),
       0
@@ -58,7 +54,6 @@ export class CartComponent implements OnInit, OnDestroy {
   }
 
   get hasItems(): boolean {
-    // التحقق مما إذا كانت السلة تحتوي على عناصر
     return this.cartItems.length > 0;
   }
 
