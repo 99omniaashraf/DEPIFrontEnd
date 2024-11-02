@@ -1,10 +1,8 @@
-<<<<<<< HEAD
-=======
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CartService } from '../../services/cart.service';
-import { Product } from '../../models/product.model';
+import { Product } from '../../models/product.interface';
 import { CartComponent } from '../cart/cart.component';
 import { ProductListingComponent } from '../product-listing/product-listing.component';
 
@@ -66,13 +64,5 @@ export class CheckoutComponent implements OnInit {
     this.cartService.removeFromCart(productId);
   }
 
-  checkout(): void {
-    if (this.cartService.getCartItems().length > 0) {
-      this.cartService.checkout();
-    } else {
-      alert('Your cart is empty!');
-    }
-  }
 
 }
->>>>>>> 4c80c3c (checkout)

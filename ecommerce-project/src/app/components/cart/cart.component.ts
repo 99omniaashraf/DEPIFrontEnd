@@ -1,20 +1,17 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CartService } from '../../services/cart.service';
-<<<<<<< HEAD
-import { Product } from '../../models/product.interface';
 import { Cart } from '../../models/cart.model';
 import { Subscription } from 'rxjs';
-=======
-import { Product } from '../../models/product.model';
-import { CheckoutComponent } from '../checkout/checkout.component';
+import { CheckoutComponent } from '../../pages/checkout/checkout/checkout.component';
+import { ProductListingComponent } from '../product-listing/product-listing.component';
 
->>>>>>> 4c80c3c (checkout)
+
 
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [CommonModule, CheckoutComponent],
+  imports: [CommonModule, CheckoutComponent, ProductListingComponent,],
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss']
 })
@@ -44,7 +41,6 @@ export class CartComponent implements OnInit, OnDestroy {
     this.calculateTotal();
   }
 
-<<<<<<< HEAD
   updateQuantity(productId: number, newQuantity: number): void {
     if (newQuantity <= 0) {
       this.removeFromCart(productId);
@@ -65,15 +61,9 @@ export class CartComponent implements OnInit, OnDestroy {
     // التحقق مما إذا كانت السلة تحتوي على عناصر
     return this.cartItems.length > 0;
   }
-}
-=======
-  checkout(): void {
-    if (this.cartService.getCartItems().length > 0) {
-      this.cartService.checkout();
-    } else {
-      alert('Your cart is empty!');
-    }
 
+  checkout(): void {
+    this.cartService.checkout();
   }
-} 
->>>>>>> 4c80c3c (checkout)
+}
+

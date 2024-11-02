@@ -8,21 +8,16 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { SignupComponent } from './components/auth/signup/signup.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'products', component: ProductListingComponent },
-  { path: 'product/:id', component: ProductDetailComponent},
+  { path: 'product/:id', component: ProductDetailComponent },
   { path: 'cart', component: CartComponent },
-<<<<<<< HEAD
-
-  { path: 'footer', component: FooterComponent},
-  { path: 'navbar', component: NavbarComponent},
-=======
   { path: 'checkout', component: CheckoutComponent },
   { path: 'footer', component: FooterComponent },
   { path: 'navbar', component: NavbarComponent },
->>>>>>> 4c80c3c (checkout)
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: '', redirectTo: '/products', pathMatch: 'full' }
